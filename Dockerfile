@@ -8,8 +8,8 @@ RUN 		echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10g
 RUN			apt-get update -y
 RUN 		apt-get install -y mongodb-10gen=2.4.6
 
-# Create the MongoDB data directory
+# We should definitely be loading data it from a data container
 RUN 		mkdir -p /data/db
 
 EXPOSE 		27017
-ENTRYPOINT	["usr/bin/mongod"]
+ENTRYPOINT	["/usr/bin/mongod"]
