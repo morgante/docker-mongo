@@ -9,7 +9,7 @@ RUN			apt-get update -y
 RUN 		apt-get install -y mongodb-10gen=2.4.6
 
 # We should definitely be loading data it from a data container
-RUN 		mkdir -p /data/db
+#   It needs a /data/db volume
 
 EXPOSE 		27017
 ENTRYPOINT	["/usr/bin/mongod"]
